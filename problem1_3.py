@@ -1,3 +1,6 @@
+#!/usr/bin/python
+
+import sys
 import matplotlib.pyplot as plt
 import csv
 import time
@@ -127,10 +130,13 @@ class Perceptron:
 
         file.close()
 
-def main():
-
+def main(input_file, output_file):
     perceptron = Perceptron()
+    perceptron.inputFile = input_file
+    perceptron.outputFile = output_file
     perceptron.start()
 
 if __name__ == '__main__':
-    main()
+    input_file = sys.argv[1]
+    output_file = sys.argv[2]
+    main(input_file, output_file)
